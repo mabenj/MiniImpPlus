@@ -10,6 +10,13 @@ while not is X PI begin
   set X = X - 1;
 end.
 
+if not is ANSWER 42 then begin
+  write false;
+end.
+else begin
+  write true;
+end.
+
 write ANSWER;
 
 end.

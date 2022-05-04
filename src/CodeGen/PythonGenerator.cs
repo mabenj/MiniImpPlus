@@ -73,6 +73,16 @@
 			return scope.ToString();
 		}
 
+		public override string VisitSelect(MiniImpPlusParser.SelectContext context) {
+			var testExpression = this.Visit(context.expr());
+			var ifScope = this.Visit(context.scope(0));
+			var elseScope = this.Visit(context.scope(1));
+			return $"if {testExpression}"
+				+ $"{ifScope}"
+				+ $"{this.Indent}else"
+				+ $"{elseScope}";
+		}
+
 		public override string VisitSet(MiniImpPlusParser.SetContext context) {
 			return $"{this.Visit(context.Identifier())} = {this.Visit(context.expr())}";
 		}
