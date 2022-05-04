@@ -7,6 +7,7 @@
 	using CommandLine;
 
 	using MiniImpPlus.CodeGen;
+	using MiniImpPlus.Utilities;
 
 	using Parser = CommandLine.Parser;
 
@@ -16,8 +17,10 @@
 		// I/O: read (results in a string)
 
 		private static int Execute(Options.Options options) {
+			Log.Init(options.IsVerbose);
+
 			if(!File.Exists(options.InputFile)) {
-				Console.WriteLine($"Could not find file '{options.InputFile}'");
+				Log.Error($"Could not find file '{options.InputFile}'");
 				return 1;
 			}
 
@@ -35,14 +38,14 @@
 				var tree = parser.prog();
 				output = new PythonGenerator().Start(tree);
 
-				Console.WriteLine("######### Input #########");
-				Console.WriteLine(input);
-				Console.WriteLine();
-				Console.WriteLine("######### Output ########");
-				Console.WriteLine(output);
-				Console.WriteLine();
+				Log.Info("######### Input #########");
+				Log.Info(input);
+				Log.Info();
+				Log.Info("######### Output ########");
+				Log.Info(output);
+				Log.Info();
 			} catch(Exception e) {
-				Console.WriteLine($"Error while compiling: {e}");
+				Log.Error($"Error while compiling: {e}");
 				return 1;
 			}
 
@@ -50,10 +53,10 @@
 				var filename = Path.GetFileNameWithoutExtension(options.InputFile) + ".py";
 				var outputPath = Path.Combine(options.OutputDirectory, filename);
 
-				Console.WriteLine($"Writing output to '{outputPath}'");
+				Log.Info($"Writing output to '{outputPath}'");
 				File.WriteAllText(outputPath, output);
 			} catch(Exception e) {
-				Console.WriteLine($"Error while writing output: {e}");
+				Log.Error($"Error while writing output: {e}");
 				return 1;
 			}
 

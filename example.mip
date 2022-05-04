@@ -19,6 +19,6 @@ end.
 
 write ANSWER;
 
-write "Bonus: here's a double quote \" inside a string literal, did you see it?"
+write "Bonus: here's a double quote \" inside a string literal, can you see it?";
 
 end.

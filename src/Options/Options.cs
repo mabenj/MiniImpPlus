@@ -8,6 +8,12 @@
 			set;
 		}
 
+		[Option('v', "verbose", Required = false, HelpText = "Enable verbose output", Default = false)]
+		public bool IsVerbose {
+			get;
+			set;
+		}
+
 		[Option('o', "output", Required = false, HelpText = "Directory where to output the compiled file", Default = "")]
 		public string OutputDirectory {
 			get;
