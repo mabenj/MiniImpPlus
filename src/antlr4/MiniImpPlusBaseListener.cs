@@ -144,6 +144,18 @@ public partial class MiniImpPlusBaseListener : IMiniImpPlusListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitWrite([NotNull] MiniImpPlusParser.WriteContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="MiniImpPlusParser.read"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterRead([NotNull] MiniImpPlusParser.ReadContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="MiniImpPlusParser.read"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitRead([NotNull] MiniImpPlusParser.ReadContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="MiniImpPlusParser.decl"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>

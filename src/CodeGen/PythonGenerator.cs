@@ -51,6 +51,12 @@
 				+ $"{programName}()";
 		}
 
+		public override string VisitRead(MiniImpPlusParser.ReadContext context) {
+			var messageNode = context.String();
+			var message = messageNode != null ? this.Visit(messageNode) : null;
+			return $"input({message})";
+		}
+
 		public override string VisitScope(MiniImpPlusParser.ScopeContext context) {
 			this.identLevel++;
 			var scope = new StringBuilder(":" + this.newline);

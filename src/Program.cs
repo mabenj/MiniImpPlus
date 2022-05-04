@@ -14,7 +14,6 @@
 	internal class Program {
 		//TODO:
 		// type casts: int <-> string
-		// I/O: read (results in a string)
 
 		private static int Execute(Options.Options options) {
 			Log.Init(options.IsVerbose);

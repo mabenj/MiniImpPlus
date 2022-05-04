@@ -9,15 +9,16 @@ Identifier : Letter ( Letter | Digit | '_' )* ;
 Number : Digit Digit* ;
 truth : 'true' | 'false' | 'not' truth | 'is' Identifier expr | truth ('and' | 'or') truth ;
 
-expr   : term (('+' | '-') term)* ;
+expr   : term (('+' | '-') term)* | read | String ;
 term   : factor (('*' | '/') factor)* ;
-factor : ('(' expr ')') | truth | Identifier | Number | String ;
+factor : ('(' expr ')') | truth | Identifier | Number ;
 
 stmt   : select | iterat | set | write ;
 select : 'if' expr 'then' scope 'else' scope ;
 iterat : 'while' expr scope ;
 set    : 'set' Identifier '=' expr ';' ;
 write  : 'write' expr ';' ;
+read   : 'read' String? ;
 
 decl     : variable ;
 variable : 'var' Identifier ( '=' expr )? ';' ;

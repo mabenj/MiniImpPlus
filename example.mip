@@ -5,6 +5,11 @@ var PI = 3;
 var ANSWER = PI;
 var X = 9;
 
+var NAME = read "What's your name? ";
+
+write "Hello";
+write NAME;
+
 while not is X PI begin
   set ANSWER = ANSWER + X;
   set X = X - 1;

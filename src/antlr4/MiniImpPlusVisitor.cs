@@ -86,6 +86,12 @@ public interface IMiniImpPlusVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitWrite([NotNull] MiniImpPlusParser.WriteContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="MiniImpPlusParser.read"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitRead([NotNull] MiniImpPlusParser.ReadContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="MiniImpPlusParser.decl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

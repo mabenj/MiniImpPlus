@@ -121,6 +121,16 @@ public interface IMiniImpPlusListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitWrite([NotNull] MiniImpPlusParser.WriteContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="MiniImpPlusParser.read"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterRead([NotNull] MiniImpPlusParser.ReadContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="MiniImpPlusParser.read"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitRead([NotNull] MiniImpPlusParser.ReadContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="MiniImpPlusParser.decl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

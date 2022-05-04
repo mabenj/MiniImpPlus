@@ -39,26 +39,27 @@ public partial class MiniImpPlusParser : Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		String=25, Identifier=26, Number=27, WS=28;
+		T__24=25, String=26, Identifier=27, Number=28, WS=29;
 	public const int
 		RULE_truth = 0, RULE_expr = 1, RULE_term = 2, RULE_factor = 3, RULE_stmt = 4, 
-		RULE_select = 5, RULE_iterat = 6, RULE_set = 7, RULE_write = 8, RULE_decl = 9, 
-		RULE_variable = 10, RULE_stmts = 11, RULE_decls = 12, RULE_scope = 13, 
-		RULE_init = 14, RULE_prog = 15;
+		RULE_select = 5, RULE_iterat = 6, RULE_set = 7, RULE_write = 8, RULE_read = 9, 
+		RULE_decl = 10, RULE_variable = 11, RULE_stmts = 12, RULE_decls = 13, 
+		RULE_scope = 14, RULE_init = 15, RULE_prog = 16;
 	public static readonly string[] ruleNames = {
 		"truth", "expr", "term", "factor", "stmt", "select", "iterat", "set", 
-		"write", "decl", "variable", "stmts", "decls", "scope", "init", "prog"
+		"write", "read", "decl", "variable", "stmts", "decls", "scope", "init", 
+		"prog"
 	};
 
 	private static readonly string[] _LiteralNames = {
 		null, "'true'", "'false'", "'not'", "'is'", "'and'", "'or'", "'+'", "'-'", 
 		"'*'", "'/'", "'('", "')'", "'if'", "'then'", "'else'", "'while'", "'set'", 
-		"'='", "';'", "'write'", "'var'", "'begin'", "'end.'", "'program'"
+		"'='", "';'", "'write'", "'read'", "'var'", "'begin'", "'end.'", "'program'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, "String", "Identifier", "Number", "WS"
+		null, null, "String", "Identifier", "Number", "WS"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -143,36 +144,36 @@ public partial class MiniImpPlusParser : Parser {
 			int _alt;
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 40;
+			State = 42;
 			ErrorHandler.Sync(this);
 			switch (TokenStream.LA(1)) {
 			case T__0:
 				{
-				State = 33;
+				State = 35;
 				Match(T__0);
 				}
 				break;
 			case T__1:
 				{
-				State = 34;
+				State = 36;
 				Match(T__1);
 				}
 				break;
 			case T__2:
 				{
-				State = 35;
+				State = 37;
 				Match(T__2);
-				State = 36;
+				State = 38;
 				truth(3);
 				}
 				break;
 			case T__3:
 				{
-				State = 37;
-				Match(T__3);
-				State = 38;
-				Match(Identifier);
 				State = 39;
+				Match(T__3);
+				State = 40;
+				Match(Identifier);
+				State = 41;
 				expr();
 				}
 				break;
@@ -180,7 +181,7 @@ public partial class MiniImpPlusParser : Parser {
 				throw new NoViableAltException(this);
 			}
 			Context.Stop = TokenStream.LT(-1);
-			State = 47;
+			State = 49;
 			ErrorHandler.Sync(this);
 			_alt = Interpreter.AdaptivePredict(TokenStream,1,Context);
 			while ( _alt!=2 && _alt!=global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER ) {
@@ -192,9 +193,9 @@ public partial class MiniImpPlusParser : Parser {
 					{
 					_localctx = new TruthContext(_parentctx, _parentState);
 					PushNewRecursionContext(_localctx, _startState, RULE_truth);
-					State = 42;
+					State = 44;
 					if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-					State = 43;
+					State = 45;
 					_la = TokenStream.LA(1);
 					if ( !(_la==T__4 || _la==T__5) ) {
 					ErrorHandler.RecoverInline(this);
@@ -203,12 +204,12 @@ public partial class MiniImpPlusParser : Parser {
 						ErrorHandler.ReportMatch(this);
 					    Consume();
 					}
-					State = 44;
+					State = 46;
 					truth(2);
 					}
 					} 
 				}
-				State = 49;
+				State = 51;
 				ErrorHandler.Sync(this);
 				_alt = Interpreter.AdaptivePredict(TokenStream,1,Context);
 			}
@@ -232,6 +233,10 @@ public partial class MiniImpPlusParser : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public TermContext term(int i) {
 			return GetRuleContext<TermContext>(i);
 		}
+		[System.Diagnostics.DebuggerNonUserCode] public ReadContext read() {
+			return GetRuleContext<ReadContext>(0);
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode String() { return GetToken(MiniImpPlusParser.String, 0); }
 		public ExprContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -262,35 +267,63 @@ public partial class MiniImpPlusParser : Parser {
 		int _la;
 		try {
 			int _alt;
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 50;
-			term();
-			State = 55;
+			State = 62;
 			ErrorHandler.Sync(this);
-			_alt = Interpreter.AdaptivePredict(TokenStream,2,Context);
-			while ( _alt!=2 && _alt!=global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1 ) {
-					{
-					{
-					State = 51;
-					_la = TokenStream.LA(1);
-					if ( !(_la==T__6 || _la==T__7) ) {
-					ErrorHandler.RecoverInline(this);
-					}
-					else {
-						ErrorHandler.ReportMatch(this);
-					    Consume();
-					}
-					State = 52;
-					term();
-					}
-					} 
-				}
+			switch (TokenStream.LA(1)) {
+			case T__0:
+			case T__1:
+			case T__2:
+			case T__3:
+			case T__10:
+			case Identifier:
+			case Number:
+				EnterOuterAlt(_localctx, 1);
+				{
+				State = 52;
+				term();
 				State = 57;
 				ErrorHandler.Sync(this);
 				_alt = Interpreter.AdaptivePredict(TokenStream,2,Context);
-			}
+				while ( _alt!=2 && _alt!=global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER ) {
+					if ( _alt==1 ) {
+						{
+						{
+						State = 53;
+						_la = TokenStream.LA(1);
+						if ( !(_la==T__6 || _la==T__7) ) {
+						ErrorHandler.RecoverInline(this);
+						}
+						else {
+							ErrorHandler.ReportMatch(this);
+						    Consume();
+						}
+						State = 54;
+						term();
+						}
+						} 
+					}
+					State = 59;
+					ErrorHandler.Sync(this);
+					_alt = Interpreter.AdaptivePredict(TokenStream,2,Context);
+				}
+				}
+				break;
+			case T__20:
+				EnterOuterAlt(_localctx, 2);
+				{
+				State = 60;
+				read();
+				}
+				break;
+			case String:
+				EnterOuterAlt(_localctx, 3);
+				{
+				State = 61;
+				Match(String);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -343,16 +376,16 @@ public partial class MiniImpPlusParser : Parser {
 			int _alt;
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 58;
+			State = 64;
 			factor();
-			State = 63;
+			State = 69;
 			ErrorHandler.Sync(this);
-			_alt = Interpreter.AdaptivePredict(TokenStream,3,Context);
+			_alt = Interpreter.AdaptivePredict(TokenStream,4,Context);
 			while ( _alt!=2 && _alt!=global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					State = 59;
+					State = 65;
 					_la = TokenStream.LA(1);
 					if ( !(_la==T__8 || _la==T__9) ) {
 					ErrorHandler.RecoverInline(this);
@@ -361,14 +394,14 @@ public partial class MiniImpPlusParser : Parser {
 						ErrorHandler.ReportMatch(this);
 					    Consume();
 					}
-					State = 60;
+					State = 66;
 					factor();
 					}
 					} 
 				}
-				State = 65;
+				State = 71;
 				ErrorHandler.Sync(this);
-				_alt = Interpreter.AdaptivePredict(TokenStream,3,Context);
+				_alt = Interpreter.AdaptivePredict(TokenStream,4,Context);
 			}
 			}
 		}
@@ -392,7 +425,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Identifier() { return GetToken(MiniImpPlusParser.Identifier, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Number() { return GetToken(MiniImpPlusParser.Number, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode String() { return GetToken(MiniImpPlusParser.String, 0); }
 		public FactorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -421,18 +453,18 @@ public partial class MiniImpPlusParser : Parser {
 		FactorContext _localctx = new FactorContext(Context, State);
 		EnterRule(_localctx, 6, RULE_factor);
 		try {
-			State = 74;
+			State = 79;
 			ErrorHandler.Sync(this);
 			switch (TokenStream.LA(1)) {
 			case T__10:
 				EnterOuterAlt(_localctx, 1);
 				{
 				{
-				State = 66;
+				State = 72;
 				Match(T__10);
-				State = 67;
+				State = 73;
 				expr();
-				State = 68;
+				State = 74;
 				Match(T__11);
 				}
 				}
@@ -443,29 +475,22 @@ public partial class MiniImpPlusParser : Parser {
 			case T__3:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 70;
+				State = 76;
 				truth(0);
 				}
 				break;
 			case Identifier:
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 71;
+				State = 77;
 				Match(Identifier);
 				}
 				break;
 			case Number:
 				EnterOuterAlt(_localctx, 4);
 				{
-				State = 72;
+				State = 78;
 				Match(Number);
-				}
-				break;
-			case String:
-				EnterOuterAlt(_localctx, 5);
-				{
-				State = 73;
-				Match(String);
 				}
 				break;
 			default:
@@ -524,34 +549,34 @@ public partial class MiniImpPlusParser : Parser {
 		StmtContext _localctx = new StmtContext(Context, State);
 		EnterRule(_localctx, 8, RULE_stmt);
 		try {
-			State = 80;
+			State = 85;
 			ErrorHandler.Sync(this);
 			switch (TokenStream.LA(1)) {
 			case T__12:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 76;
+				State = 81;
 				select();
 				}
 				break;
 			case T__15:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 77;
+				State = 82;
 				iterat();
 				}
 				break;
 			case T__16:
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 78;
+				State = 83;
 				set();
 				}
 				break;
 			case T__19:
 				EnterOuterAlt(_localctx, 4);
 				{
-				State = 79;
+				State = 84;
 				write();
 				}
 				break;
@@ -610,17 +635,17 @@ public partial class MiniImpPlusParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 82;
-			Match(T__12);
-			State = 83;
-			expr();
-			State = 84;
-			Match(T__13);
-			State = 85;
-			scope();
-			State = 86;
-			Match(T__14);
 			State = 87;
+			Match(T__12);
+			State = 88;
+			expr();
+			State = 89;
+			Match(T__13);
+			State = 90;
+			scope();
+			State = 91;
+			Match(T__14);
+			State = 92;
 			scope();
 			}
 		}
@@ -672,11 +697,11 @@ public partial class MiniImpPlusParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 89;
+			State = 94;
 			Match(T__15);
-			State = 90;
+			State = 95;
 			expr();
-			State = 91;
+			State = 96;
 			scope();
 			}
 		}
@@ -726,15 +751,15 @@ public partial class MiniImpPlusParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 93;
+			State = 98;
 			Match(T__16);
-			State = 94;
+			State = 99;
 			Match(Identifier);
-			State = 95;
+			State = 100;
 			Match(T__17);
-			State = 96;
+			State = 101;
 			expr();
-			State = 97;
+			State = 102;
 			Match(T__18);
 			}
 		}
@@ -783,12 +808,69 @@ public partial class MiniImpPlusParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 99;
+			State = 104;
 			Match(T__19);
-			State = 100;
+			State = 105;
 			expr();
-			State = 101;
+			State = 106;
 			Match(T__18);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			ErrorHandler.ReportError(this, re);
+			ErrorHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class ReadContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode String() { return GetToken(MiniImpPlusParser.String, 0); }
+		public ReadContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_read; } }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override void EnterRule(IParseTreeListener listener) {
+			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
+			if (typedListener != null) typedListener.EnterRead(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override void ExitRule(IParseTreeListener listener) {
+			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
+			if (typedListener != null) typedListener.ExitRead(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitRead(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public ReadContext read() {
+		ReadContext _localctx = new ReadContext(Context, State);
+		EnterRule(_localctx, 18, RULE_read);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 108;
+			Match(T__20);
+			State = 110;
+			ErrorHandler.Sync(this);
+			switch ( Interpreter.AdaptivePredict(TokenStream,7,Context) ) {
+			case 1:
+				{
+				State = 109;
+				Match(String);
+				}
+				break;
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -832,11 +914,11 @@ public partial class MiniImpPlusParser : Parser {
 	[RuleVersion(0)]
 	public DeclContext decl() {
 		DeclContext _localctx = new DeclContext(Context, State);
-		EnterRule(_localctx, 18, RULE_decl);
+		EnterRule(_localctx, 20, RULE_decl);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 103;
+			State = 112;
 			variable();
 			}
 		}
@@ -882,28 +964,28 @@ public partial class MiniImpPlusParser : Parser {
 	[RuleVersion(0)]
 	public VariableContext variable() {
 		VariableContext _localctx = new VariableContext(Context, State);
-		EnterRule(_localctx, 20, RULE_variable);
+		EnterRule(_localctx, 22, RULE_variable);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 105;
-			Match(T__20);
-			State = 106;
+			State = 114;
+			Match(T__21);
+			State = 115;
 			Match(Identifier);
-			State = 109;
+			State = 118;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
 			if (_la==T__17) {
 				{
-				State = 107;
+				State = 116;
 				Match(T__17);
-				State = 108;
+				State = 117;
 				expr();
 				}
 			}
 
-			State = 111;
+			State = 120;
 			Match(T__18);
 			}
 		}
@@ -951,24 +1033,24 @@ public partial class MiniImpPlusParser : Parser {
 	[RuleVersion(0)]
 	public StmtsContext stmts() {
 		StmtsContext _localctx = new StmtsContext(Context, State);
-		EnterRule(_localctx, 22, RULE_stmts);
+		EnterRule(_localctx, 24, RULE_stmts);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 113;
+			State = 122;
 			stmt();
-			State = 117;
+			State = 126;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__12) | (1L << T__15) | (1L << T__16) | (1L << T__19))) != 0)) {
 				{
 				{
-				State = 114;
+				State = 123;
 				stmt();
 				}
 				}
-				State = 119;
+				State = 128;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
 			}
@@ -1018,24 +1100,24 @@ public partial class MiniImpPlusParser : Parser {
 	[RuleVersion(0)]
 	public DeclsContext decls() {
 		DeclsContext _localctx = new DeclsContext(Context, State);
-		EnterRule(_localctx, 24, RULE_decls);
+		EnterRule(_localctx, 26, RULE_decls);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 120;
+			State = 129;
 			decl();
-			State = 124;
+			State = 133;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			while (_la==T__20) {
+			while (_la==T__21) {
 				{
 				{
-				State = 121;
+				State = 130;
 				decl();
 				}
 				}
-				State = 126;
+				State = 135;
 				ErrorHandler.Sync(this);
 				_la = TokenStream.LA(1);
 			}
@@ -1085,35 +1167,35 @@ public partial class MiniImpPlusParser : Parser {
 	[RuleVersion(0)]
 	public ScopeContext scope() {
 		ScopeContext _localctx = new ScopeContext(Context, State);
-		EnterRule(_localctx, 26, RULE_scope);
+		EnterRule(_localctx, 28, RULE_scope);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 127;
-			Match(T__21);
-			State = 129;
+			State = 136;
+			Match(T__22);
+			State = 138;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			if (_la==T__20) {
+			if (_la==T__21) {
 				{
-				State = 128;
+				State = 137;
 				decls();
 				}
 			}
 
-			State = 132;
+			State = 141;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__12) | (1L << T__15) | (1L << T__16) | (1L << T__19))) != 0)) {
 				{
-				State = 131;
+				State = 140;
 				stmts();
 				}
 			}
 
-			State = 134;
-			Match(T__22);
+			State = 143;
+			Match(T__23);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1155,13 +1237,13 @@ public partial class MiniImpPlusParser : Parser {
 	[RuleVersion(0)]
 	public InitContext init() {
 		InitContext _localctx = new InitContext(Context, State);
-		EnterRule(_localctx, 28, RULE_init);
+		EnterRule(_localctx, 30, RULE_init);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 136;
-			Match(T__23);
-			State = 137;
+			State = 145;
+			Match(T__24);
+			State = 146;
 			Match(Identifier);
 			}
 		}
@@ -1209,13 +1291,13 @@ public partial class MiniImpPlusParser : Parser {
 	[RuleVersion(0)]
 	public ProgContext prog() {
 		ProgContext _localctx = new ProgContext(Context, State);
-		EnterRule(_localctx, 30, RULE_prog);
+		EnterRule(_localctx, 32, RULE_prog);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 139;
+			State = 148;
 			init();
-			State = 140;
+			State = 149;
 			scope();
 			}
 		}
@@ -1244,48 +1326,52 @@ public partial class MiniImpPlusParser : Parser {
 	}
 
 	private static int[] _serializedATN = {
-		4,1,28,143,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
+		4,1,29,152,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
 		7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,2,14,7,14,
-		2,15,7,15,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,3,0,41,8,0,1,0,1,0,1,0,5,0,46,
-		8,0,10,0,12,0,49,9,0,1,1,1,1,1,1,5,1,54,8,1,10,1,12,1,57,9,1,1,2,1,2,1,
-		2,5,2,62,8,2,10,2,12,2,65,9,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,3,3,75,8,
-		3,1,4,1,4,1,4,1,4,3,4,81,8,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,6,1,6,1,6,1,
-		6,1,7,1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,9,1,9,1,10,1,10,1,10,1,10,
-		3,10,110,8,10,1,10,1,10,1,11,1,11,5,11,116,8,11,10,11,12,11,119,9,11,1,
-		12,1,12,5,12,123,8,12,10,12,12,12,126,9,12,1,13,1,13,3,13,130,8,13,1,13,
-		3,13,133,8,13,1,13,1,13,1,14,1,14,1,14,1,15,1,15,1,15,1,15,0,1,0,16,0,
-		2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,0,3,1,0,5,6,1,0,7,8,1,0,9,10,
-		144,0,40,1,0,0,0,2,50,1,0,0,0,4,58,1,0,0,0,6,74,1,0,0,0,8,80,1,0,0,0,10,
-		82,1,0,0,0,12,89,1,0,0,0,14,93,1,0,0,0,16,99,1,0,0,0,18,103,1,0,0,0,20,
-		105,1,0,0,0,22,113,1,0,0,0,24,120,1,0,0,0,26,127,1,0,0,0,28,136,1,0,0,
-		0,30,139,1,0,0,0,32,33,6,0,-1,0,33,41,5,1,0,0,34,41,5,2,0,0,35,36,5,3,
-		0,0,36,41,3,0,0,3,37,38,5,4,0,0,38,39,5,26,0,0,39,41,3,2,1,0,40,32,1,0,
-		0,0,40,34,1,0,0,0,40,35,1,0,0,0,40,37,1,0,0,0,41,47,1,0,0,0,42,43,10,1,
-		0,0,43,44,7,0,0,0,44,46,3,0,0,2,45,42,1,0,0,0,46,49,1,0,0,0,47,45,1,0,
-		0,0,47,48,1,0,0,0,48,1,1,0,0,0,49,47,1,0,0,0,50,55,3,4,2,0,51,52,7,1,0,
-		0,52,54,3,4,2,0,53,51,1,0,0,0,54,57,1,0,0,0,55,53,1,0,0,0,55,56,1,0,0,
-		0,56,3,1,0,0,0,57,55,1,0,0,0,58,63,3,6,3,0,59,60,7,2,0,0,60,62,3,6,3,0,
-		61,59,1,0,0,0,62,65,1,0,0,0,63,61,1,0,0,0,63,64,1,0,0,0,64,5,1,0,0,0,65,
-		63,1,0,0,0,66,67,5,11,0,0,67,68,3,2,1,0,68,69,5,12,0,0,69,75,1,0,0,0,70,
-		75,3,0,0,0,71,75,5,26,0,0,72,75,5,27,0,0,73,75,5,25,0,0,74,66,1,0,0,0,
-		74,70,1,0,0,0,74,71,1,0,0,0,74,72,1,0,0,0,74,73,1,0,0,0,75,7,1,0,0,0,76,
-		81,3,10,5,0,77,81,3,12,6,0,78,81,3,14,7,0,79,81,3,16,8,0,80,76,1,0,0,0,
-		80,77,1,0,0,0,80,78,1,0,0,0,80,79,1,0,0,0,81,9,1,0,0,0,82,83,5,13,0,0,
-		83,84,3,2,1,0,84,85,5,14,0,0,85,86,3,26,13,0,86,87,5,15,0,0,87,88,3,26,
-		13,0,88,11,1,0,0,0,89,90,5,16,0,0,90,91,3,2,1,0,91,92,3,26,13,0,92,13,
-		1,0,0,0,93,94,5,17,0,0,94,95,5,26,0,0,95,96,5,18,0,0,96,97,3,2,1,0,97,
-		98,5,19,0,0,98,15,1,0,0,0,99,100,5,20,0,0,100,101,3,2,1,0,101,102,5,19,
-		0,0,102,17,1,0,0,0,103,104,3,20,10,0,104,19,1,0,0,0,105,106,5,21,0,0,106,
-		109,5,26,0,0,107,108,5,18,0,0,108,110,3,2,1,0,109,107,1,0,0,0,109,110,
-		1,0,0,0,110,111,1,0,0,0,111,112,5,19,0,0,112,21,1,0,0,0,113,117,3,8,4,
-		0,114,116,3,8,4,0,115,114,1,0,0,0,116,119,1,0,0,0,117,115,1,0,0,0,117,
-		118,1,0,0,0,118,23,1,0,0,0,119,117,1,0,0,0,120,124,3,18,9,0,121,123,3,
-		18,9,0,122,121,1,0,0,0,123,126,1,0,0,0,124,122,1,0,0,0,124,125,1,0,0,0,
-		125,25,1,0,0,0,126,124,1,0,0,0,127,129,5,22,0,0,128,130,3,24,12,0,129,
-		128,1,0,0,0,129,130,1,0,0,0,130,132,1,0,0,0,131,133,3,22,11,0,132,131,
-		1,0,0,0,132,133,1,0,0,0,133,134,1,0,0,0,134,135,5,23,0,0,135,27,1,0,0,
-		0,136,137,5,24,0,0,137,138,5,26,0,0,138,29,1,0,0,0,139,140,3,28,14,0,140,
-		141,3,26,13,0,141,31,1,0,0,0,11,40,47,55,63,74,80,109,117,124,129,132
+		2,15,7,15,2,16,7,16,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,3,0,43,8,0,1,0,1,0,
+		1,0,5,0,48,8,0,10,0,12,0,51,9,0,1,1,1,1,1,1,5,1,56,8,1,10,1,12,1,59,9,
+		1,1,1,1,1,3,1,63,8,1,1,2,1,2,1,2,5,2,68,8,2,10,2,12,2,71,9,2,1,3,1,3,1,
+		3,1,3,1,3,1,3,1,3,3,3,80,8,3,1,4,1,4,1,4,1,4,3,4,86,8,4,1,5,1,5,1,5,1,
+		5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,
+		1,9,1,9,3,9,111,8,9,1,10,1,10,1,11,1,11,1,11,1,11,3,11,119,8,11,1,11,1,
+		11,1,12,1,12,5,12,125,8,12,10,12,12,12,128,9,12,1,13,1,13,5,13,132,8,13,
+		10,13,12,13,135,9,13,1,14,1,14,3,14,139,8,14,1,14,3,14,142,8,14,1,14,1,
+		14,1,15,1,15,1,15,1,16,1,16,1,16,1,16,0,1,0,17,0,2,4,6,8,10,12,14,16,18,
+		20,22,24,26,28,30,32,0,3,1,0,5,6,1,0,7,8,1,0,9,10,154,0,42,1,0,0,0,2,62,
+		1,0,0,0,4,64,1,0,0,0,6,79,1,0,0,0,8,85,1,0,0,0,10,87,1,0,0,0,12,94,1,0,
+		0,0,14,98,1,0,0,0,16,104,1,0,0,0,18,108,1,0,0,0,20,112,1,0,0,0,22,114,
+		1,0,0,0,24,122,1,0,0,0,26,129,1,0,0,0,28,136,1,0,0,0,30,145,1,0,0,0,32,
+		148,1,0,0,0,34,35,6,0,-1,0,35,43,5,1,0,0,36,43,5,2,0,0,37,38,5,3,0,0,38,
+		43,3,0,0,3,39,40,5,4,0,0,40,41,5,27,0,0,41,43,3,2,1,0,42,34,1,0,0,0,42,
+		36,1,0,0,0,42,37,1,0,0,0,42,39,1,0,0,0,43,49,1,0,0,0,44,45,10,1,0,0,45,
+		46,7,0,0,0,46,48,3,0,0,2,47,44,1,0,0,0,48,51,1,0,0,0,49,47,1,0,0,0,49,
+		50,1,0,0,0,50,1,1,0,0,0,51,49,1,0,0,0,52,57,3,4,2,0,53,54,7,1,0,0,54,56,
+		3,4,2,0,55,53,1,0,0,0,56,59,1,0,0,0,57,55,1,0,0,0,57,58,1,0,0,0,58,63,
+		1,0,0,0,59,57,1,0,0,0,60,63,3,18,9,0,61,63,5,26,0,0,62,52,1,0,0,0,62,60,
+		1,0,0,0,62,61,1,0,0,0,63,3,1,0,0,0,64,69,3,6,3,0,65,66,7,2,0,0,66,68,3,
+		6,3,0,67,65,1,0,0,0,68,71,1,0,0,0,69,67,1,0,0,0,69,70,1,0,0,0,70,5,1,0,
+		0,0,71,69,1,0,0,0,72,73,5,11,0,0,73,74,3,2,1,0,74,75,5,12,0,0,75,80,1,
+		0,0,0,76,80,3,0,0,0,77,80,5,27,0,0,78,80,5,28,0,0,79,72,1,0,0,0,79,76,
+		1,0,0,0,79,77,1,0,0,0,79,78,1,0,0,0,80,7,1,0,0,0,81,86,3,10,5,0,82,86,
+		3,12,6,0,83,86,3,14,7,0,84,86,3,16,8,0,85,81,1,0,0,0,85,82,1,0,0,0,85,
+		83,1,0,0,0,85,84,1,0,0,0,86,9,1,0,0,0,87,88,5,13,0,0,88,89,3,2,1,0,89,
+		90,5,14,0,0,90,91,3,28,14,0,91,92,5,15,0,0,92,93,3,28,14,0,93,11,1,0,0,
+		0,94,95,5,16,0,0,95,96,3,2,1,0,96,97,3,28,14,0,97,13,1,0,0,0,98,99,5,17,
+		0,0,99,100,5,27,0,0,100,101,5,18,0,0,101,102,3,2,1,0,102,103,5,19,0,0,
+		103,15,1,0,0,0,104,105,5,20,0,0,105,106,3,2,1,0,106,107,5,19,0,0,107,17,
+		1,0,0,0,108,110,5,21,0,0,109,111,5,26,0,0,110,109,1,0,0,0,110,111,1,0,
+		0,0,111,19,1,0,0,0,112,113,3,22,11,0,113,21,1,0,0,0,114,115,5,22,0,0,115,
+		118,5,27,0,0,116,117,5,18,0,0,117,119,3,2,1,0,118,116,1,0,0,0,118,119,
+		1,0,0,0,119,120,1,0,0,0,120,121,5,19,0,0,121,23,1,0,0,0,122,126,3,8,4,
+		0,123,125,3,8,4,0,124,123,1,0,0,0,125,128,1,0,0,0,126,124,1,0,0,0,126,
+		127,1,0,0,0,127,25,1,0,0,0,128,126,1,0,0,0,129,133,3,20,10,0,130,132,3,
+		20,10,0,131,130,1,0,0,0,132,135,1,0,0,0,133,131,1,0,0,0,133,134,1,0,0,
+		0,134,27,1,0,0,0,135,133,1,0,0,0,136,138,5,23,0,0,137,139,3,26,13,0,138,
+		137,1,0,0,0,138,139,1,0,0,0,139,141,1,0,0,0,140,142,3,24,12,0,141,140,
+		1,0,0,0,141,142,1,0,0,0,142,143,1,0,0,0,143,144,5,24,0,0,144,29,1,0,0,
+		0,145,146,5,25,0,0,146,147,5,27,0,0,147,31,1,0,0,0,148,149,3,30,15,0,149,
+		150,3,28,14,0,150,33,1,0,0,0,13,42,49,57,62,69,79,85,110,118,126,133,138,
+		141
 	};
 
 	public static readonly ATN _ATN =
