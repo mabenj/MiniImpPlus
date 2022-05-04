@@ -12,7 +12,6 @@
 
 	internal class Program {
 		//TODO:
-		// literals: strings
 		// type casts: int <-> string
 		// I/O: read (results in a string)
 

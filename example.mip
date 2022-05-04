@@ -11,12 +11,14 @@ while not is X PI begin
 end.
 
 if not is ANSWER 42 then begin
-  write false;
+  write "This is not the answer: ";
 end.
 else begin
-  write true;
+  write "Answer to life and everything is: ";
 end.
 
 write ANSWER;
+
+write "Bonus: here's a double quote \" inside a string literal, did you see it?"
 
 end.

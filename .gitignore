@@ -397,7 +397,7 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Compiled Python files
-*.py
+# Compiled Python example file
+example.py
 
 launchSettings.json
