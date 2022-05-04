@@ -12,8 +12,6 @@
 
 	internal class Program {
 		//TODO:
-		// if else then
-		// boolean operators: and or
 		// literals: strings
 		// type casts: int <-> string
 		// I/O: read (results in a string)

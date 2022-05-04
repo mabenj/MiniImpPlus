@@ -5,7 +5,7 @@ fragment Letter : [A-Z] ;
 
 Identifier : Letter ( Letter | Digit | '_' )* ;
 Number : Digit Digit* ;
-truth : 'true' | 'false' | 'not' truth | 'is' Identifier expr ;
+truth : 'true' | 'false' | 'not' truth | 'is' Identifier expr | truth ('and' | 'or') truth ;
 
 expr   : term (('+' | '-') term)* ;
 term   : factor (('*' | '/') factor)* ;

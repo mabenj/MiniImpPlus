@@ -74,13 +74,20 @@
 		}
 
 		public override string VisitSelect(MiniImpPlusParser.SelectContext context) {
+			var select = new StringBuilder();
+
 			var testExpression = this.Visit(context.expr());
 			var ifScope = this.Visit(context.scope(0));
-			var elseScope = this.Visit(context.scope(1));
-			return $"if {testExpression}"
-				+ $"{ifScope}"
-				+ $"{this.Indent}else"
-				+ $"{elseScope}";
+			var elseScope = context.scope().Length > 1 ? this.Visit(context.scope(1)) : string.Empty;
+
+			select.Append($"if {testExpression}");
+			select.Append($"{ifScope}");
+			if(!string.IsNullOrWhiteSpace(elseScope)) {
+				select.Append($"{this.Indent}else");
+				select.Append($"{elseScope}");
+			}
+
+			return select.ToString();
 		}
 
 		public override string VisitSet(MiniImpPlusParser.SetContext context) {
@@ -102,8 +109,8 @@
 		public override string VisitTruth(MiniImpPlusParser.TruthContext context) {
 			var expression = new StringBuilder();
 			for(var i = 0; i < context.ChildCount; i++) {
-				var truth = this.Visit(context.GetChild(i));
-				switch(truth) {
+				var part = this.Visit(context.GetChild(i));
+				switch(part) {
 				case "true": {
 					expression.AppendJoin(' ', "True");
 					break;
@@ -129,6 +136,21 @@
 					}
 					var right = this.Visit(context.GetChild(i + 1));
 					expression.AppendJoin(' ', $"not {right}");
+					break;
+				}
+				case "or":
+				case "and": {
+					if(i - 1 < 0) {
+						//TODO: throw error?
+						break;
+					}
+					if(i + 1 >= context.ChildCount) {
+						//TODO: throw error?
+						break;
+					}
+					var left = this.Visit(context.GetChild(i - 1));
+					var right = this.Visit(context.GetChild(i + 1));
+					expression.AppendJoin(' ', $"{left} {part} {right}");
 					break;
 				}
 				default:
