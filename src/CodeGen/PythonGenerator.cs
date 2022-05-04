@@ -1,4 +1,4 @@
-﻿namespace MiniImpPlus {
+﻿namespace MiniImpPlus.CodeGen {
 	using System;
 	using System.Text;
 
