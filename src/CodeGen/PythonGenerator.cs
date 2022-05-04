@@ -14,6 +14,16 @@
 			return this.VisitProg(ctx);
 		}
 
+		public override string VisitAsInt(MiniImpPlusParser.AsIntContext context) {
+			var expr = this.Visit(context.expr());
+			return $"int({expr})";
+		}
+
+		public override string VisitAsStr(MiniImpPlusParser.AsStrContext context) {
+			var expr = this.Visit(context.expr());
+			return $"str({expr})";
+		}
+
 		public override string VisitChildren(IRuleNode node) {
 			var code = new StringBuilder();
 			for(var i = 0; i < node.ChildCount; i++) {

@@ -9,7 +9,7 @@ Identifier : Letter ( Letter | Digit | '_' )* ;
 Number : Digit Digit* ;
 truth : 'true' | 'false' | 'not' truth | 'is' Identifier expr | truth ('and' | 'or') truth ;
 
-expr   : term (('+' | '-') term)* | read | String ;
+expr   : term (('+' | '-') term)* | read | String | asInt | asStr;
 term   : factor (('*' | '/') factor)* ;
 factor : ('(' expr ')') | truth | Identifier | Number ;
 
@@ -19,6 +19,9 @@ iterat : 'while' expr scope ;
 set    : 'set' Identifier '=' expr ';' ;
 write  : 'write' expr ';' ;
 read   : 'read' String? ;
+
+asInt : 'as integer' expr ;
+asStr : 'as string' expr ;
 
 decl     : variable ;
 variable : 'var' Identifier ( '=' expr )? ';' ;

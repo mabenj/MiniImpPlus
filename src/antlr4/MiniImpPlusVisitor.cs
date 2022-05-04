@@ -92,6 +92,18 @@ public interface IMiniImpPlusVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitRead([NotNull] MiniImpPlusParser.ReadContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="MiniImpPlusParser.asInt"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAsInt([NotNull] MiniImpPlusParser.AsIntContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="MiniImpPlusParser.asStr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAsStr([NotNull] MiniImpPlusParser.AsStrContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="MiniImpPlusParser.decl"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

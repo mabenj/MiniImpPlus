@@ -12,9 +12,6 @@
 	using Parser = CommandLine.Parser;
 
 	internal class Program {
-		//TODO:
-		// type casts: int <-> string
-
 		private static int Execute(Options.Options options) {
 			Log.Init(options.IsVerbose);
 

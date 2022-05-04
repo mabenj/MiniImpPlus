@@ -156,6 +156,30 @@ public partial class MiniImpPlusBaseListener : IMiniImpPlusListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitRead([NotNull] MiniImpPlusParser.ReadContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="MiniImpPlusParser.asInt"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAsInt([NotNull] MiniImpPlusParser.AsIntContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="MiniImpPlusParser.asInt"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAsInt([NotNull] MiniImpPlusParser.AsIntContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="MiniImpPlusParser.asStr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAsStr([NotNull] MiniImpPlusParser.AsStrContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="MiniImpPlusParser.asStr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAsStr([NotNull] MiniImpPlusParser.AsStrContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="MiniImpPlusParser.decl"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
