@@ -36,7 +36,7 @@
 		public override string VisitExpr(MiniImpPlusParser.ExprContext context) {
 			var expression = new StringBuilder(this.Visit(context.GetChild(0)));
 			for(var i = 1; i < context.ChildCount; i++) {
-				expression.Append(" " + this.Visit(context.GetChild(i)));
+				expression.AppendJoin(" ", this.Visit(context.GetChild(i)));
 			}
 			return expression.ToString();
 		}

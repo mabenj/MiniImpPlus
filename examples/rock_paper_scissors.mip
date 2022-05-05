@@ -1,0 +1,51 @@
+﻿program ROCK_PAPER_SCISSORS begin
+  var GAME_ON = true;
+  var GAME_ON_ANSWER;
+
+  while is GAME_ON true begin
+    var PLAYER1 = read "Enter name for player 1: ";
+    var PLAYER2 = read "Enter name for player 2: ";
+    var PLAYER1_GESTURE;
+    var PLAYER2_GESTURE;
+    var WINNER;
+
+    write "Starting game between players " + PLAYER1 + " and " + PLAYER2;
+
+    set PLAYER1_GESTURE = read "[" + PLAYER1 + "] Choose rock (r), paper (p) or scissors (s): ";
+    set PLAYER2_GESTURE = read "[" + PLAYER2 + "] Choose rock (r), paper (p) or scissors (s): ";
+
+    if is PLAYER1_GESTURE "r" and is PLAYER2_GESTURE "s"
+        or (is PLAYER1_GESTURE "p" and is PLAYER2_GESTURE "r")
+        or (is PLAYER1_GESTURE "s" and is PLAYER2_GESTURE "p") then begin
+      set WINNER = PLAYER1;
+    end.
+    else begin
+      if is PLAYER2_GESTURE "r" and is PLAYER1_GESTURE "s"
+          or (is PLAYER2_GESTURE "p" and is PLAYER1_GESTURE "r")
+          or (is PLAYER2_GESTURE "s" and is PLAYER1_GESTURE "p") then
+      begin
+        set WINNER = PLAYER2;
+      end.
+      else begin
+        set WINNER = "draw";
+      end.
+    end.
+
+    if is WINNER "draw" then begin
+      write "RESULT: It is a draw! No one wins.";
+    end.
+    else begin
+      write "RESULT: " + WINNER + " wins!";
+    end.
+    
+    set GAME_ON_ANSWER = read "Play again? (yes/no): ";
+    if is GAME_ON_ANSWER "yes" then begin
+      set GAME_ON = true;
+    end.
+    else begin
+      set GAME_ON = false;
+    end.
+
+  end.
+  
+end.

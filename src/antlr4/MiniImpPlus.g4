@@ -7,9 +7,21 @@ fragment Escape : '\\"' | '\\\\' ;
 String : '"'(Escape | .)*? '"' ;
 Identifier : Letter ( Letter | Digit | '_' )* ;
 Number : Digit Digit* ;
-truth : 'true' | 'false' | 'not' truth | 'is' Identifier expr | truth ('and' | 'or') truth ;
+truth 
+	: 'true' 
+	| 'false' 
+	| 'not' truth 
+	| 'is' Identifier expr 
+	| truth 'and' expr
+	| truth 'or' expr
+	;
 
-expr   : read | asInt | asStr | term (('+' | '-') term)* ;
+expr   
+	: read 
+	| asInt 
+	| asStr 
+	| term (('+' | '-') term)* 
+	;
 term   : factor (('*' | '/') factor)* ;
 factor : ('(' expr ')') | truth | Identifier | Number | String ;
 
