@@ -58,7 +58,7 @@
 			var mainScope = this.Visit(context.scope());
 			return $"def {programName}()"
 				+ $"{mainScope}"
-				+ $"{programName}()";
+				+ $"{this.newline}{programName}()";
 		}
 
 		public override string VisitRead(MiniImpPlusParser.ReadContext context) {
@@ -69,19 +69,19 @@
 
 		public override string VisitScope(MiniImpPlusParser.ScopeContext context) {
 			this.identLevel++;
-			var scope = new StringBuilder(":" + this.newline);
+			var scope = new StringBuilder(":");
 
 			var declarations = context.decls()?.decl();
 			if(declarations != null) {
 				foreach(var declaration in declarations) {
-					scope.Append(this.Indent + this.Visit(declaration) + this.newline);
+					scope.Append(this.newline + this.Indent + this.Visit(declaration));
 				}
 			}
 
 			var statements = context.stmts()?.stmt();
 			if(statements != null) {
 				foreach(var statement in statements) {
-					scope.Append(this.Indent + this.Visit(statement) + this.newline);
+					scope.Append(this.newline + this.Indent + this.Visit(statement));
 				}
 			}
 
@@ -99,7 +99,7 @@
 			select.Append($"if {testExpression}");
 			select.Append($"{ifScope}");
 			if(!string.IsNullOrWhiteSpace(elseScope)) {
-				select.Append($"{this.Indent}else");
+				select.Append($"{this.newline + this.Indent}else");
 				select.Append($"{elseScope}");
 			}
 
