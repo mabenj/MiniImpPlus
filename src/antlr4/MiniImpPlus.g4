@@ -9,9 +9,9 @@ Identifier : Letter ( Letter | Digit | '_' )* ;
 Number : Digit Digit* ;
 truth : 'true' | 'false' | 'not' truth | 'is' Identifier expr | truth ('and' | 'or') truth ;
 
-expr   : term (('+' | '-') term)* | read | String | asInt | asStr;
+expr   : read | asInt | asStr | term (('+' | '-') term)* ;
 term   : factor (('*' | '/') factor)* ;
-factor : ('(' expr ')') | truth | Identifier | Number ;
+factor : ('(' expr ')') | truth | Identifier | Number | String ;
 
 stmt   : select | iterat | set | write ;
 select : 'if' expr 'then' scope 'else' scope ;
