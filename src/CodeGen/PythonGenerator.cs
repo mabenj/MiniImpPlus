@@ -179,11 +179,9 @@
 
 		public override string VisitVariable(MiniImpPlusParser.VariableContext context) {
 			var identifier = this.Visit(context.Identifier());
-			var value = this.Visit(context.expr());
-			if(string.IsNullOrWhiteSpace(value)) {
-				return $"{identifier} = None";
-			}
-			return $"{identifier} = {value}";
+			var expression = context.expr();
+			var value = expression != null ? this.Visit(expression) : null;
+			return string.IsNullOrWhiteSpace(value) ? $"{identifier} = None" : $"{identifier} = {value}";
 		}
 
 		public override string VisitWrite(MiniImpPlusParser.WriteContext context) {
