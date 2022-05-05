@@ -850,7 +850,9 @@ public partial class MiniImpPlusParser : Parser {
 	}
 
 	public partial class ReadContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode String() { return GetToken(MiniImpPlusParser.String, 0); }
+		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
+			return GetRuleContext<ExprContext>(0);
+		}
 		public ReadContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -889,7 +891,7 @@ public partial class MiniImpPlusParser : Parser {
 			case 1:
 				{
 				State = 115;
-				Match(String);
+				expr();
 				}
 				break;
 			}
@@ -1485,7 +1487,7 @@ public partial class MiniImpPlusParser : Parser {
 		0,99,11,1,0,0,0,100,101,5,16,0,0,101,102,3,2,1,0,102,103,3,32,16,0,103,
 		13,1,0,0,0,104,105,5,17,0,0,105,106,5,29,0,0,106,107,5,18,0,0,107,108,
 		3,2,1,0,108,109,5,19,0,0,109,15,1,0,0,0,110,111,5,20,0,0,111,112,3,2,1,
-		0,112,113,5,19,0,0,113,17,1,0,0,0,114,116,5,21,0,0,115,117,5,28,0,0,116,
+		0,112,113,5,19,0,0,113,17,1,0,0,0,114,116,5,21,0,0,115,117,3,2,1,0,116,
 		115,1,0,0,0,116,117,1,0,0,0,117,19,1,0,0,0,118,119,5,22,0,0,119,120,3,
 		2,1,0,120,21,1,0,0,0,121,122,5,23,0,0,122,123,3,2,1,0,123,23,1,0,0,0,124,
 		125,3,26,13,0,125,25,1,0,0,0,126,127,5,24,0,0,127,130,5,29,0,0,128,129,

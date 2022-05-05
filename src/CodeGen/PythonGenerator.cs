@@ -62,8 +62,8 @@
 		}
 
 		public override string VisitRead(MiniImpPlusParser.ReadContext context) {
-			var messageNode = context.String();
-			var message = messageNode != null ? this.Visit(messageNode) : null;
+			var expression = context.expr();
+			var message = expression != null ? this.Visit(expression) : null;
 			return $"input({message})";
 		}
 

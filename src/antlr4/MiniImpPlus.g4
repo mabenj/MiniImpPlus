@@ -18,7 +18,7 @@ select : 'if' expr 'then' scope 'else' scope ;
 iterat : 'while' expr scope ;
 set    : 'set' Identifier '=' expr ';' ;
 write  : 'write' expr ';' ;
-read   : 'read' String? ;
+read   : 'read' expr? ;
 
 asInt : 'as integer' expr ;
 asStr : 'as string' expr ;
