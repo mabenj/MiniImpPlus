@@ -39,12 +39,7 @@
     end.
     
     set GAME_ON_ANSWER = read "Play again? (yes/no): ";
-    if is GAME_ON_ANSWER "yes" then begin
-      set GAME_ON = true;
-    end.
-    else begin
-      set GAME_ON = false;
-    end.
+    set GAME_ON = is GAME_ON_ANSWER "yes";
 
   end.
   
