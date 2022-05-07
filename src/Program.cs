@@ -12,6 +12,11 @@
 	using Parser = CommandLine.Parser;
 
 	internal class Program {
+        //TODO: 
+        // add self contained executables to github
+        // default value of -o
+        // if directory specified in -o does not exist => error
+
 		private static int Execute(Options.Options options) {
 			Log.Init(options.IsVerbose);
 
