@@ -86,7 +86,7 @@ Alternatively, the MiniImp+ compiler can also be downloaded as a standalone CLI 
 
 ## Development
 
-1. Open the MiniImpPlus project in Visual Studio (or Visual Studio Code)
+1. Open the MiniImpPlus solution in Visual Studio (or the repository folder in Visual Studio Code)
 2. Start coding
 
 Note: After modifying the grammar file `src/antlr4/MiniImpPlus.g4`, the parser and lexer classes must be updated as well by running the following command:
