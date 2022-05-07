@@ -14,7 +14,7 @@
 			set;
 		}
 
-		[Option('o', "output", Required = false, HelpText = "Directory where to output the compiled file", Default = "")]
+		[Option('o', "output", Required = false, HelpText = "Directory where to output the compiled file")]
 		public string OutputDirectory {
 			get;
 			set;
