@@ -13,7 +13,7 @@
 
 	internal class Program {
         //TODO: 
-        // add self contained executables to github
+        // add self contained executables to github releases
         // default value of -o
         // if directory specified in -o does not exist => error
 

@@ -44,9 +44,13 @@ $ py calculator.py
 42
 ```
 
+### Rock, Paper, Scissors Test Program
+
+[rock_paper_scissors.mip](examples/rock_paper_scissors.mip) contains a simple demo application that implements a _rock, paper, scissors_ game between two players.
+
 ## Language Constructs
 
-The original MiniImp implementation covered the following language constructs:
+This MiniImp+ implementation consists of the following language constructs:
 
 -   literals: numbers, truth values
 -   arithmetic operators: +, -, \*, /
@@ -55,9 +59,6 @@ The original MiniImp implementation covered the following language constructs:
 -   control flow constructs: while, if
 -   I/O: write
 -   variable (re)definitions and references
-
-This MiniImp+ implementation adds to this with the following:
-
 -   boolean operators: and, or
 -   literals: strings
 -   type casts: from int to string, from string to int
@@ -81,7 +82,7 @@ Example:
 
 `dotnet run -- examples/rock_paper_scissors.mip -o output/`
 
-Alternatively, the MiniImp+ compiler can also be downloaded as a standalone CLI from [releases](https://github.com/mabenj/MiniImpPlus/releases) (Windows and Linux supported).
+Alternatively, the MiniImp+ compiler can also be downloaded as a standalone CLI from [releases](https://github.com/mabenj/MiniImpPlus/releases) page (Windows and Linux supported).
 
 ## Development
 
