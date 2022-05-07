@@ -70,13 +70,13 @@ This MiniImp+ implementation consists of the following language constructs:
 
 -   [.NET Core 3.1 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
 -   git
+-   Java 1.7 or higher (only if the grammar is to be modified)
 
 ## Running
 
 1. `git clone`
 2. `cd MiniImpPlus`
-3. `dotnet build`
-4. `dotnet run -- <params>`
+3. `dotnet run -- <params>`
 
 Example:
 
