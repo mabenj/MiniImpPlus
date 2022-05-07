@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from .\MiniImpPlus.g4 by ANTLR 4.10.1
+// Generated from .\src\antlr4\MiniImpPlus.g4 by ANTLR 4.10.1
 
 // Unreachable code detected
 #pragma warning disable 0162

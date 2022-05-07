@@ -91,4 +91,4 @@ Alternatively, the MiniImp+ compiler can also be downloaded as a standalone CLI 
 
 Note: After modifying the grammar file `src/antlr4/MiniImpPlus.g4`, the parser and lexer classes must be updated as well by running the following command:
 
-`java -jar .\src\antlr4\antlr-4.10.1-complete.jar -Dlanguage=CSharp -visitor .\src\antlr4\MiniImpPlus.g4`
+`java -jar .\src\antlr4\antlr-4.10.1-complete.jar -Dlanguage=CSharp -visitor -no-listener .\src\antlr4\MiniImpPlus.g4`

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from .\MiniImpPlus.g4 by ANTLR 4.10.1
+// Generated from .\src\antlr4\MiniImpPlus.g4 by ANTLR 4.10.1
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -107,16 +107,6 @@ public partial class MiniImpPlusParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_truth; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterTruth(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitTruth(this);
-		}
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
@@ -256,16 +246,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_expr; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterExpr(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitExpr(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitExpr(this);
@@ -371,16 +351,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_term; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterTerm(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitTerm(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTerm(this);
@@ -452,16 +422,6 @@ public partial class MiniImpPlusParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_factor; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterFactor(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitFactor(this);
-		}
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
@@ -556,16 +516,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_stmt; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterStmt(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitStmt(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitStmt(this);
@@ -640,16 +590,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_select; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterSelect(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitSelect(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitSelect(this);
@@ -702,16 +642,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_iterat; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterIterat(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitIterat(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitIterat(this);
@@ -755,16 +685,6 @@ public partial class MiniImpPlusParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_set; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterSet(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitSet(this);
-		}
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
@@ -813,16 +733,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_write; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterWrite(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitWrite(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitWrite(this);
@@ -865,16 +775,6 @@ public partial class MiniImpPlusParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_read; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterRead(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitRead(this);
-		}
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
@@ -925,16 +825,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_asInt; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterAsInt(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitAsInt(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitAsInt(this);
@@ -975,16 +865,6 @@ public partial class MiniImpPlusParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_asStr; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterAsStr(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitAsStr(this);
-		}
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
@@ -1027,16 +907,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_decl; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterDecl(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitDecl(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitDecl(this);
@@ -1076,16 +946,6 @@ public partial class MiniImpPlusParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_variable; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterVariable(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitVariable(this);
-		}
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
@@ -1146,16 +1006,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_stmts; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterStmts(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitStmts(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitStmts(this);
@@ -1213,16 +1063,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_decls; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterDecls(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitDecls(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitDecls(this);
@@ -1279,16 +1119,6 @@ public partial class MiniImpPlusParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_scope; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterScope(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitScope(this);
-		}
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
@@ -1350,16 +1180,6 @@ public partial class MiniImpPlusParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_init; } }
 		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterInit(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitInit(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitInit(this);
@@ -1403,16 +1223,6 @@ public partial class MiniImpPlusParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_prog; } }
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void EnterRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.EnterProg(this);
-		}
-		[System.Diagnostics.DebuggerNonUserCode]
-		public override void ExitRule(IParseTreeListener listener) {
-			IMiniImpPlusListener typedListener = listener as IMiniImpPlusListener;
-			if (typedListener != null) typedListener.ExitProg(this);
-		}
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IMiniImpPlusVisitor<TResult> typedVisitor = visitor as IMiniImpPlusVisitor<TResult>;
