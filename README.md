@@ -4,7 +4,7 @@ MiniImp+ is a simple and minimal imperative programming language that is a super
 
 Currently, this particular implementation of MiniImp+ compiler/transpiler takes a program written in MiniImp+ as input and produces a Python program as output.
 
-This implemenation of MiniImp+ is built using .NET Core (C#) and [ANTLR v4](https://github.com/antlr/antlr4). ANTLR is used to generate the parser and lexer classes, whereas .NET Core is used for the rest, like handling the command line arguments and code generation (MiniImp+ to Python).
+This implemenation is built using .NET Core (C#) and [ANTLR v4](https://github.com/antlr/antlr4). ANTLR is used to generate the parser and lexer classes, whereas .NET Core is used for the rest, like handling the command line arguments and code generation (MiniImp+ to Python).
 
 ## Example
 
