@@ -25,6 +25,10 @@ program CALCULATOR begin
 end.
 ```
 
+```
+$ MiniImpPlus calculator.mip
+```
+
 Output Python source (calculator.py)
 
 ```Python
